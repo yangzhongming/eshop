@@ -6,6 +6,7 @@ import com.cn.dubbox.service.UserService;
 @Service
 public class UserServiceImpl implements UserService {
 
+	@Override
 	public String getName() {
 		
 		return "Hello World....";

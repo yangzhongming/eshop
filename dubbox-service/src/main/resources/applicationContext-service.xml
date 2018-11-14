@@ -11,7 +11,7 @@
         http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<dubbo:application name="dubboxdemo-service" />
+	<dubbo:application name="dubbox-service" />
 	<dubbo:registry address="zookeeper://192.168.1.12:2181" />
-	<dubbo:annotation package="cn.itcast.dubboxdemo.service" />
+	<dubbo:annotation package="com.cn.dubbox.service.impl" />
 </beans>
