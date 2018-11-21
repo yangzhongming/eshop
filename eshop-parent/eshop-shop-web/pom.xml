@@ -1,9 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>eshop-shop-web</groupId>
+	<parent>
+		<groupId>com.cn.eshop</groupId>
+		<artifactId>eshop-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 	<artifactId>eshop-shop-web</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<dependencies>
@@ -49,35 +52,42 @@
 			<version>${spring.version}</version>
 		</dependency>
 		<!-- dubbo相关 -->
-		<!-- <dependency>
+		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo</artifactId>
+			<version>${dubbo.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.zookeeper</groupId>
 			<artifactId>zookeeper</artifactId>
+			<version>${zookeeper.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.sgroschupf</groupId>
 			<artifactId>zkclient</artifactId>
+			<version>${zkclient.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
+			<version>1.2.28</version>
 		</dependency>
 		<dependency>
 			<groupId>javassist</groupId>
 			<artifactId>javassist</artifactId>
+			<version>3.11.0.GA</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
-		</dependency> -->
-		
+			<version>1.10</version>
+		</dependency>
+
 		<!-- 身份认证的依赖 -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -91,8 +101,8 @@
 			<version>${spring.version}</version>
 		</dependency>
 
-	<!-- <dependency> <groupId>javax.servlet</groupId> <artifactId>servlet-api</artifactId> 
-		<scope>provided</scope> </dependency> -->
+		<!-- <dependency> <groupId>javax.servlet</groupId> <artifactId>servlet-api</artifactId> 
+			<scope>provided</scope> </dependency> -->
 	</dependencies>
 
 	<build>
