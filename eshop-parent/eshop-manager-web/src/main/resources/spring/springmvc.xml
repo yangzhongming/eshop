@@ -31,8 +31,9 @@
 	</bean>
 
 	<!-- 引用dubbo 服务 -->
+	<!-- 
 	<dubbo:application name="eshop-manager-web" />
 	<dubbo:registry address="zookeeper://192.168.25.135:2181"/>
 	<dubbo:annotation package="com.cn.eshop.manager.controller" />  	
-
+     -->
 </beans>
