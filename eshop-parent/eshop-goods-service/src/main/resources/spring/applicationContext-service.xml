@@ -8,10 +8,11 @@
         http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
  
+ 	<!-- 
     <dubbo:protocol name="dubbo" port="20881"></dubbo:protocol>
 	<dubbo:application name="eshop-goods-service"/>  
 
     <dubbo:annotation package="com.cn.goods.service.impl" />  
-   
+    -->
    
 </beans>
