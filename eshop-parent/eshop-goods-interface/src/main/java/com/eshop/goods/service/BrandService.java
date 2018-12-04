@@ -2,9 +2,8 @@ package com.eshop.goods.service;
 
 import java.util.List;
 
-import org.eshop.entity.PageResult;
-
-import com.cn.pojo.TbBrand;
+import com.eshop.common.PageResult;
+import com.eshop.pojo.TbBrand;
 
 /**
  * 品牌接口

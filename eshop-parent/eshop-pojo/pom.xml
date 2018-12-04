@@ -3,12 +3,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.cn.eshop</groupId>
+    <groupId>com.eshop</groupId>
     <artifactId>eshop-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.cn.eshop</groupId>
-  <artifactId>eshop-pojo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-
+  	<groupId>com.eshop</groupId>
+    <artifactId>eshop-pojo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
 </project>

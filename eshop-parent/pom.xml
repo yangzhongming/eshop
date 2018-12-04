@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.cn.eshop</groupId>
+	<groupId>com.eshop</groupId>
 	<artifactId>eshop-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -29,12 +29,13 @@
 		<ik.version>2012_u6</ik.version>
 	</properties>
 
-
+<dependencyManagement>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
+			<version>4.9</version>
+			<scope>test</scope>
 		</dependency>
 		<!-- Spring -->
 		<dependency>
@@ -77,7 +78,7 @@
 			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<!-- dubbo相关 -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -93,11 +94,6 @@
 			<groupId>com.github.sgroschupf</groupId>
 			<artifactId>zkclient</artifactId>
 			<version>${zkclient.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.9</version>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -120,7 +116,7 @@
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- pagehelper -->
 		<dependency>
 			<groupId>com.github.pagehelper</groupId>
@@ -157,15 +153,10 @@
 			<version>${druid.version}</version>
 		</dependency>
 
-		<!-- dubbo相关 -->
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>dubbo</artifactId>
-			<version>${dubbo.version}</version>
-		</dependency>
 		<!-- <dependency> <groupId>org.csource.fastdfs</groupId> <artifactId>fastdfs</artifactId> 
 			<version>1.2</version> </dependency> -->
 	</dependencies>
+</dependencyManagement>
 
 	<build>
 		<plugins>
@@ -180,7 +171,6 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-
 		</plugins>
 	</build>
 	<modules>
@@ -191,7 +181,6 @@
 		<module>eshop-goods-service</module>
 		<module>eshop-manager-web</module>
 		<module>eshop-shop-web</module>
-		<module>eshp-dao</module>
 	</modules>
 
 </project>
