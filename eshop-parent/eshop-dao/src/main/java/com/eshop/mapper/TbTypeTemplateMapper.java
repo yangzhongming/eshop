@@ -1,4 +1,4 @@
-package com.eshop.dao;
+package com.eshop.mapper;
 
 import com.eshop.pojo.TbTypeTemplate;
 

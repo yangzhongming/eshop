@@ -1,8 +1,11 @@
-package com.eshop.dao;
+package com.eshop.mapper;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.eshop.pojo.TbBrand;
+import com.eshop.pojo.TbBrandExample;
 
 public interface TbBrandMapper {
     int deleteByPrimaryKey(Long id);
@@ -11,7 +14,7 @@ public interface TbBrandMapper {
 
     int insertSelective(TbBrand record);
 
-    List<TbBrand> selectByExample(TbBrand record);
+    List<TbBrand> selectByExample(TbBrandExample record);
     
     TbBrand selectByPrimaryKey(Long id);
 
