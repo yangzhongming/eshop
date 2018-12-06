@@ -3,12 +3,12 @@ package com.eshop.goods.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.eshop.common.PageResult;
-import com.eshop.dao.TbBrandMapper;
 import com.eshop.pojo.TbBrand;
 import com.eshop.goods.service.BrandService;
+import com.eshop.mapper.TbBrandMapper;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 

@@ -1,7 +1,15 @@
 package com.eshop.pojo;
 
-public class TbBrand {
-    private Long id;
+import java.io.Serializable;
+
+public class TbBrand implements Serializable {
+	
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private Long id;
 
     private String name;
 

@@ -2,8 +2,6 @@ package com.eshop.mapper;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
 import com.eshop.pojo.TbBrand;
 import com.eshop.pojo.TbBrandExample;
 

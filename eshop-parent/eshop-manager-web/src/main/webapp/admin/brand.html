@@ -25,40 +25,15 @@
 	app.controller('brandController',function($scope,$http){
 		//查询品牌列表
 		$scope.findAll=function(){
-			$http.get('../admin/data.json').success(function(response){
+			$http.get('../brand/findAll.do').success(function(response){
 				$scope.list = response;
 			});
 		}
 	});
-	
-	$scope.paginationConf = {
-			currentPage: 1,
-			totalItems: 10,
-			itemsPerPage: 10,
-			perPageOptions: [10, 20, 30, 40, 50],
-			onChange: function(){
-				$scope.reloadList();
-			}
-		};
-	
-	//刷新列表
-	$scope.reloadList=function(){
-		$scope.search( $scope.paginationConf.currentPage ,  $scope.paginationConf.itemsPerPage );
-	}
-	
-	//分页 
-	$scope.findPage=function(page,size){
-		$http.get('../brand/findPage.do?page='+page +'&size='+size).success(
-			function(response){
-				$scope.list=response.rows;//显示当前页数据 	
-				$scope.paginationConf.totalItems=response.total;//更新总记录数 
-			}		
-		);				
-	}
-	
+
 </script>
 </head>
-<body class="hold-transition skin-red sidebar-mini" ng-app="eshop" ng-controller="brandController" >
+<body class="hold-transition skin-red sidebar-mini" ng-app="eshop" ng-controller="brandController" ng-init="findAll()" >
 	<!-- .box-body -->
 	<div class="box-header with-border">
 		<h3 class="box-title">品牌管理</h3>
@@ -117,7 +92,6 @@
 						<td>{{entity.name}}</td>
 						<td>{{entity.firstChar}}</td> 
 					</tr>
-
 				</tbody>
 			</table>
 			<!--数据列表 翻页/-->
