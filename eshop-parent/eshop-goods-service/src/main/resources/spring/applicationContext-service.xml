@@ -12,7 +12,8 @@
 
     <dubbo:protocol name="dubbo" port="20881"></dubbo:protocol>
 	<dubbo:application name="eshop-goods-service"/>
-	<dubbo:registry address="zookeeper://192.168.1.12:2181"/>
+	<!-- <dubbo:registry address="zookeeper://192.168.1.12:2181"/> -->
+	<dubbo:registry address="zookeeper://192.168.254.128:2181"/>
     <dubbo:annotation package="com.eshop.goods.service.impl" /> 
    
 </beans>

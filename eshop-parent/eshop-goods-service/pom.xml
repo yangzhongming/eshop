@@ -62,35 +62,55 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo</artifactId>
-			<version>${dubbo.version}</version>
 		</dependency>
-		<!-- <dependency> <groupId>org.apache.zookeeper</groupId> <artifactId>zookeeper</artifactId> 
-			</dependency> <dependency> <groupId>com.github.sgroschupf</groupId> <artifactId>zkclient</artifactId> 
-			</dependency> <dependency> <groupId>junit</groupId> <artifactId>junit</artifactId> 
-			</dependency> <dependency> <groupId>com.alibaba</groupId> <artifactId>fastjson</artifactId> 
-			</dependency> <dependency> <groupId>javassist</groupId> <artifactId>javassist</artifactId> 
-			</dependency> <dependency> <groupId>commons-codec</groupId> <artifactId>commons-codec</artifactId> 
-			</dependency> <dependency> <groupId>javax.servlet</groupId> <artifactId>servlet-api</artifactId> 
-			<scope>provided</scope> </dependency> -->
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.sgroschupf</groupId>
+			<artifactId>zkclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javassist</groupId>
+			<artifactId>javassist</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>com.eshop</groupId>
 			<artifactId>eshop-dao</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.eshop</groupId>
 			<artifactId>eshop-goods-interface</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		
-	 <dependency>
-		<groupId>com.eshop</groupId>
-		<artifactId>eshop-pojo</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</dependency>
-	
-	
+
+		<dependency>
+			<groupId>com.eshop</groupId>
+			<artifactId>eshop-pojo</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

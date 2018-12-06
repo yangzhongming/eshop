@@ -25,7 +25,8 @@
 
 	<!-- 引用dubbo 服务 -->
 	<dubbo:application name="eshop-manager-web" />
-	<dubbo:registry address="zookeeper://192.168.1.12:2181"/>
+<!-- 	<dubbo:registry address="zookeeper://192.168.1.12:2181"/> -->
+	<dubbo:registry address="zookeeper://192.168.254.128:2181"/>
 	<dubbo:annotation package="com.eshop.manager.controller" />  	
      
 </beans>
