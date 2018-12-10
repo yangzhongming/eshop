@@ -45,6 +45,11 @@
     		return $http.post('../brand/add.do',entity);		
     	}
     	
+    	//更新
+    	this.update=function(entity){
+    		return $http.post('../brand/update.do',entity);		
+    	}
+    	
     	//删除
     	this.del=function(ids){
     		return $http.get('../brand/delete.do?ids=' + ids);		
@@ -52,11 +57,11 @@
 
     	//搜索
     	this.search=function(page,size,searchEntity){
-    		$http.post('../brand/search.do?page='+page +'&size='+size,searchEntity);		
+    		return $http.post('../brand/search.do?page='+page +'&size='+size,searchEntity);		
     	}
 	}); 
 	
-	app.controller('brandController', function($scope, $http,brandService) {
+	app.controller('brandController', function($scope,$http,brandService) {
 
 		//查询品牌列表
 		$scope.findAll = function() {
@@ -92,13 +97,14 @@
 
 		//增加品牌
 		$scope.save = function() {
-			var methodName = 'add';
+			var object = null;
 
 			if ($scope.entity.id != null) {
-				methodName = 'update';
+				object=brandService.update($scope.entity);
+			} else{
+				object=brandService.add($scope.entity);
 			}
-			$http.post('../brand/' + methodName + '.do', $scope.entity)
-					.success(function(response) {
+			object.success(function(response) {
 						if (response.success) {
 							$scope.reloadList();
 						} else {
@@ -129,7 +135,7 @@
 		//删除
 		$scope.del = function() {
 			if (confirm('确定要删除吗？')) {
-				brandSevice.del( $scope.selectIds)
+				brandService.del( $scope.selectIds)
 						.success(function(response) {
 							if (response.success) {
 								$scope.reloadList();//刷新
