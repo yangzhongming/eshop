@@ -24,11 +24,43 @@
 
 <script type="text/javascript">
 	var app = angular.module('eshop', [ 'pagination' ]);
-	app.controller('brandController', function($scope, $http) {
+	
+	app.service('brandService',function($http){
+    	//读取列表数据绑定到表单中
+    	this.findAll=function(){
+    		return $http.get('../brand/findAll.do');		
+    	}
+    	//分页 
+    	this.findPage=function(page,size){
+    		return $http.get('../brand/findPage.do?pageNum='+page+'&pageSize='+size);		
+    	}
+    	
+    	//查询实体
+    	this.findOne=function(id){
+    		return $http.get('../brand/findOne.do?id=' + id);		
+    	}    
+    	
+    	//增加 
+    	this.add=function(entity){
+    		return $http.post('../brand/add.do',entity);		
+    	}
+    	
+    	//删除
+    	this.del=function(ids){
+    		return $http.get('../brand/delete.do?ids=' + ids);		
+    	}
+
+    	//搜索
+    	this.search=function(page,size,searchEntity){
+    		$http.post('../brand/search.do?page='+page +'&size='+size,searchEntity);		
+    	}
+	}); 
+	
+	app.controller('brandController', function($scope, $http,brandService) {
 
 		//查询品牌列表
 		$scope.findAll = function() {
-			$http.get('../brand/findAll.do').success(function(response) {
+			brandService.findAll().success(function(response) {
 				$scope.list = response;
 			});
 		}
@@ -52,9 +84,7 @@
 
 		//分页 
 		$scope.findPage = function(page, size) {
-			$http.get(
-					'../brand/findPage.do?pageNum=' + page + '&pageSize='
-							+ size).success(function(response) {
+			brandService.findPage(page, size).success(function(response) {
 				$scope.list = response.rows;//显示当前页数据 	
 				$scope.paginationConf.totalItems = response.total;//更新总记录数 
 			});
@@ -74,12 +104,12 @@
 						} else {
 							alert(response.message);
 						}
-					});
+		});
 		}
 
 		//查询实体
 		$scope.findOne = function(id) {
-			$http.get('../brand/findOne.do?id=' + id).success(
+			brandService.findOne(id).success(
 					function(response) {
 						$scope.entity = response;
 					});
@@ -98,9 +128,8 @@
 
 		//删除
 		$scope.del = function() {
-
 			if (confirm('确定要删除吗？')) {
-				$http.get('../brand/delete.do?ids=' + $scope.selectIds)
+				brandSevice.del( $scope.selectIds)
 						.success(function(response) {
 							if (response.success) {
 								$scope.reloadList();//刷新
@@ -115,14 +144,12 @@
 		$scope.searchEntity={};
 		//条件查询 
 		$scope.search=function(page,size){
-			
-			$http.post('../brand/search.do?page='+page +'&size='+size, $scope.searchEntity).success(
+			brandService.search(page,size,$scope.searchEntity).success(
 				function(response){
 					$scope.list=response.rows;//显示当前页数据 	
 					$scope.paginationConf.totalItems=response.total;//更新总记录数 
 				}		
 			);	
-			
 		}
 	});
 </script>
