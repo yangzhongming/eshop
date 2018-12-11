@@ -9,30 +9,30 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.eshop.common.PageResult;
 import com.eshop.common.Result;
-import com.eshop.goods.service.BrandService;
-import com.eshop.pojo.TbBrand;
+import com.eshop.goods.service.SpecificationService;
+import com.eshop.pojo.TbSpecification;
 
 @RestController
-@RequestMapping("/brand")
-public class BrandController {
+@RequestMapping("/specification")
+public class SpecificationController {
 
 	@Reference
-	private BrandService brandservice;
+	private SpecificationService specificationService;
 
 	@RequestMapping("/findAll")
-	public List<TbBrand> findAll() {
-		return brandservice.findAll();
+	public List<TbSpecification> findAll() {
+		return specificationService.findAll();
 	}
 
 	@RequestMapping("/findPage")
 	public PageResult findPage(int pageNum, int pageSize) {
-		return brandservice.findPage(pageNum, pageSize);
+		return specificationService.findPage(pageNum, pageSize);
 	}
 
 	@RequestMapping("/add")
-	public Result add(@RequestBody TbBrand brand) {
+	public Result add(@RequestBody TbSpecification brand) {
 		try {
-			brandservice.add(brand);
+			specificationService.add(brand);
 			return new Result(true, "新增成功");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -42,14 +42,14 @@ public class BrandController {
 	}
 
 	@RequestMapping("/findOne")
-	public TbBrand findOne(Long id) {
-		return brandservice.findOne(id);
+	public TbSpecification findOne(Long id) {
+		return specificationService.findOne(id);
 	}
 
 	@RequestMapping("/update")
-	public Result update(@RequestBody TbBrand brand) {
+	public Result update(@RequestBody TbSpecification specification) {
 		try {
-			brandservice.update(brand);
+			specificationService.update(specification);
 			return new Result(true, "修改成功");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -60,7 +60,7 @@ public class BrandController {
 	@RequestMapping("/delete")
 	public Result delete(Long[] ids) {
 		try {
-			brandservice.delete(ids);
+			specificationService.delete(ids);
 			return new Result(true, "删除成功");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -69,8 +69,8 @@ public class BrandController {
 	}
 	
 	@RequestMapping("/search")
-	public PageResult search(@RequestBody TbBrand brand,int page,int size) {
-	   return brandservice.findPage(brand, page, size);
+	public PageResult search(@RequestBody TbSpecification brand,int page,int size) {
+	   return specificationService.findPage(brand, page, size);
 	}
 
 }

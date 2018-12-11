@@ -3,14 +3,14 @@ package com.eshop.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TbBrandExample {
+public class TbContentCategoryExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public TbBrandExample() {
+    public TbContentCategoryExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -234,73 +234,213 @@ public class TbBrandExample {
             return (Criteria) this;
         }
 
-        public Criteria andFirstCharIsNull() {
-            addCriterion("first_char is null");
+        public Criteria andContentGroupIsNull() {
+            addCriterion("content_group is null");
             return (Criteria) this;
         }
 
-        public Criteria andFirstCharIsNotNull() {
-            addCriterion("first_char is not null");
+        public Criteria andContentGroupIsNotNull() {
+            addCriterion("content_group is not null");
             return (Criteria) this;
         }
 
-        public Criteria andFirstCharEqualTo(String value) {
-            addCriterion("first_char =", value, "firstChar");
+        public Criteria andContentGroupEqualTo(String value) {
+            addCriterion("content_group =", value, "contentGroup");
             return (Criteria) this;
         }
 
-        public Criteria andFirstCharNotEqualTo(String value) {
-            addCriterion("first_char <>", value, "firstChar");
+        public Criteria andContentGroupNotEqualTo(String value) {
+            addCriterion("content_group <>", value, "contentGroup");
             return (Criteria) this;
         }
 
-        public Criteria andFirstCharGreaterThan(String value) {
-            addCriterion("first_char >", value, "firstChar");
+        public Criteria andContentGroupGreaterThan(String value) {
+            addCriterion("content_group >", value, "contentGroup");
             return (Criteria) this;
         }
 
-        public Criteria andFirstCharGreaterThanOrEqualTo(String value) {
-            addCriterion("first_char >=", value, "firstChar");
+        public Criteria andContentGroupGreaterThanOrEqualTo(String value) {
+            addCriterion("content_group >=", value, "contentGroup");
             return (Criteria) this;
         }
 
-        public Criteria andFirstCharLessThan(String value) {
-            addCriterion("first_char <", value, "firstChar");
+        public Criteria andContentGroupLessThan(String value) {
+            addCriterion("content_group <", value, "contentGroup");
             return (Criteria) this;
         }
 
-        public Criteria andFirstCharLessThanOrEqualTo(String value) {
-            addCriterion("first_char <=", value, "firstChar");
+        public Criteria andContentGroupLessThanOrEqualTo(String value) {
+            addCriterion("content_group <=", value, "contentGroup");
             return (Criteria) this;
         }
 
-        public Criteria andFirstCharLike(String value) {
-            addCriterion("first_char like", value, "firstChar");
+        public Criteria andContentGroupLike(String value) {
+            addCriterion("content_group like", value, "contentGroup");
             return (Criteria) this;
         }
 
-        public Criteria andFirstCharNotLike(String value) {
-            addCriterion("first_char not like", value, "firstChar");
+        public Criteria andContentGroupNotLike(String value) {
+            addCriterion("content_group not like", value, "contentGroup");
             return (Criteria) this;
         }
 
-        public Criteria andFirstCharIn(List<String> values) {
-            addCriterion("first_char in", values, "firstChar");
+        public Criteria andContentGroupIn(List<String> values) {
+            addCriterion("content_group in", values, "contentGroup");
             return (Criteria) this;
         }
 
-        public Criteria andFirstCharNotIn(List<String> values) {
-            addCriterion("first_char not in", values, "firstChar");
+        public Criteria andContentGroupNotIn(List<String> values) {
+            addCriterion("content_group not in", values, "contentGroup");
             return (Criteria) this;
         }
 
-        public Criteria andFirstCharBetween(String value1, String value2) {
-            addCriterion("first_char between", value1, value2, "firstChar");
+        public Criteria andContentGroupBetween(String value1, String value2) {
+            addCriterion("content_group between", value1, value2, "contentGroup");
             return (Criteria) this;
         }
 
-        public Criteria andFirstCharNotBetween(String value1, String value2) {
-            addCriterion("first_char not between", value1, value2, "firstChar");
+        public Criteria andContentGroupNotBetween(String value1, String value2) {
+            addCriterion("content_group not between", value1, value2, "contentGroup");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentKeyIsNull() {
+            addCriterion("content_key is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentKeyIsNotNull() {
+            addCriterion("content_key is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentKeyEqualTo(String value) {
+            addCriterion("content_key =", value, "contentKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentKeyNotEqualTo(String value) {
+            addCriterion("content_key <>", value, "contentKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentKeyGreaterThan(String value) {
+            addCriterion("content_key >", value, "contentKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentKeyGreaterThanOrEqualTo(String value) {
+            addCriterion("content_key >=", value, "contentKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentKeyLessThan(String value) {
+            addCriterion("content_key <", value, "contentKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentKeyLessThanOrEqualTo(String value) {
+            addCriterion("content_key <=", value, "contentKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentKeyLike(String value) {
+            addCriterion("content_key like", value, "contentKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentKeyNotLike(String value) {
+            addCriterion("content_key not like", value, "contentKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentKeyIn(List<String> values) {
+            addCriterion("content_key in", values, "contentKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentKeyNotIn(List<String> values) {
+            addCriterion("content_key not in", values, "contentKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentKeyBetween(String value1, String value2) {
+            addCriterion("content_key between", value1, value2, "contentKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentKeyNotBetween(String value1, String value2) {
+            addCriterion("content_key not between", value1, value2, "contentKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusIsNull() {
+            addCriterion("status is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusIsNotNull() {
+            addCriterion("status is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusEqualTo(String value) {
+            addCriterion("status =", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusNotEqualTo(String value) {
+            addCriterion("status <>", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusGreaterThan(String value) {
+            addCriterion("status >", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusGreaterThanOrEqualTo(String value) {
+            addCriterion("status >=", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusLessThan(String value) {
+            addCriterion("status <", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusLessThanOrEqualTo(String value) {
+            addCriterion("status <=", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusLike(String value) {
+            addCriterion("status like", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusNotLike(String value) {
+            addCriterion("status not like", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusIn(List<String> values) {
+            addCriterion("status in", values, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusNotIn(List<String> values) {
+            addCriterion("status not in", values, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusBetween(String value1, String value2) {
+            addCriterion("status between", value1, value2, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusNotBetween(String value1, String value2) {
+            addCriterion("status not between", value1, value2, "status");
             return (Criteria) this;
         }
     }
