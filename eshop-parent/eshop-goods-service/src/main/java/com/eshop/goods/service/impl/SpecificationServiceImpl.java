@@ -9,6 +9,10 @@ import com.eshop.common.PageResult;
 import com.eshop.goods.service.SpecificationService;
 import com.eshop.mapper.TbSpecificationMapper;
 import com.eshop.pojo.TbSpecification;
+import com.eshop.pojo.TbSpecificationExample;
+import com.eshop.pojo.TbSpecificationExample.Criteria;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 @Service
 public class SpecificationServiceImpl implements SpecificationService {
     
@@ -22,38 +26,57 @@ public class SpecificationServiceImpl implements SpecificationService {
 
 	@Override
 	public PageResult findPage(int pageNum, int pageSize) {
-		// TODO Auto-generated method stub
-		return null;
+		PageHelper.startPage(pageNum,pageSize);
+		
+		Page<TbSpecification> page =(Page<TbSpecification>) specificationMapper.selectByExample(null);
+		
+		return  new PageResult(page.getTotal(), page.getResult());
 	}
 
 	@Override
 	public void add(TbSpecification specification) {
-		// TODO Auto-generated method stub
+		
+		specificationMapper.insert(specification);
 
 	}
 
 	@Override
 	public TbSpecification findOne(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return specificationMapper.selectByPrimaryKey(id);
 	}
 
 	@Override
 	public void update(TbSpecification specification) {
-		// TODO Auto-generated method stub
-
+		 specificationMapper.updateByPrimaryKey(specification);
 	}
 
 	@Override
 	public void delete(Long[] ids) {
-		// TODO Auto-generated method stub
-
+		for(Long id:ids){
+			specificationMapper.deleteByPrimaryKey(id);
+		}
 	}
 
 	@Override
 	public PageResult findPage(TbSpecification specification, int pageNum, int pageSize) {
-		// TODO Auto-generated method stub
-		return null;
+
+		
+		PageHelper.startPage(pageNum,pageSize);
+		
+		TbSpecificationExample tbSpecificationExample = new TbSpecificationExample();
+		
+		Criteria criteria = tbSpecificationExample.createCriteria();
+		
+		if(specification!=null){
+			if(specification.getSpecName()!=null&&specification.getSpecName().length()>0){
+				criteria.andSpecNameLike("%"+specification.getSpecName()+"%");
+			}
+		}
+		
+		Page<TbSpecification> page =(Page<TbSpecification>) specificationMapper.selectByExample(tbSpecificationExample);
+		
+		return  new PageResult(page.getTotal(), page.getResult());
+	
 	}
 
 }
