@@ -12,7 +12,7 @@ app.controller('baseController',function($scope){
 
 	//刷新列表
 	$scope.reloadList = function() {
-		$scope.findPage($scope.paginationConf.currentPage,
+		$scope.search($scope.paginationConf.currentPage,
 				$scope.paginationConf.itemsPerPage);
 	}
 	
