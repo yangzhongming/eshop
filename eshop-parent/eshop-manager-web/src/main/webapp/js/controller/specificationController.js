@@ -70,4 +70,9 @@
 				}		
 			);	
 		}
+		
+		$scope.entity={specificationOptList:[]};
+		$scope.addTableRow=function(){
+			$scope.entity.specificationOptList.push({});
+		}
 	});
