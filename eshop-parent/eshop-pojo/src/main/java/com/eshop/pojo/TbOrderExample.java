@@ -1,11 +1,15 @@
 package com.eshop.pojo;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class TbOrderExample {
+public class TbOrderExample implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
     protected String orderByClause;
 
     protected boolean distinct;

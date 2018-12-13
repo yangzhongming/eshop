@@ -1,6 +1,11 @@
 package com.eshop.pojo;
 
-public class TbSpecificationOption {
+import java.io.Serializable;
+
+public class TbSpecificationOption implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
     private Long id;
 
     private String optionName;

@@ -1,6 +1,11 @@
 package com.eshop.pojo;
 
-public class TbContentCategory {
+import java.io.Serializable;
+
+public class TbContentCategory implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
     private Long id;
 
     private String name;

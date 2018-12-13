@@ -1,9 +1,13 @@
 package com.eshop.pojo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TbGoodsDescExample {
+public class TbGoodsDescExample implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
     protected String orderByClause;
 
     protected boolean distinct;

@@ -1,8 +1,12 @@
 package com.eshop.pojo;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class TbOrderItem {
+public class TbOrderItem implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
     private Long id;
 
     private Long itemId;
