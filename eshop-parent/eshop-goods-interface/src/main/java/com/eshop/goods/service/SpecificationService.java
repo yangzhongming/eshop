@@ -3,8 +3,8 @@ package com.eshop.goods.service;
 import java.util.List;
 
 import com.eshop.common.PageResult;
-import com.eshop.pojo.TbBrand;
 import com.eshop.pojo.TbSpecification;
+import com.eshop.specification.pojo.Specification;
 
 /**
  * 规格接口
@@ -22,12 +22,6 @@ public interface SpecificationService {
 	 * @return
 	 */
 	public PageResult findPage(int pageNum,int pageSize);
-	
-	/**
-	 * 增加品牌
-	 * @param brand
-	 */
-	public void add(TbSpecification specification);
 	
 	/**
 	 * 根据Id查询实体
@@ -56,4 +50,10 @@ public interface SpecificationService {
 	 * @return
 	 */
 	public PageResult findPage(TbSpecification specification,int pageNum,int pageSize);
+	
+	/**
+	 * 新增规格
+	 * @param specification 规格pojo
+	 */
+	public void add(Specification specification);
 }
