@@ -18,11 +18,11 @@
 			});
 		}
 
-		//增加品牌
+		//增加规格
 		$scope.save = function() {
 			var object = null;
 
-			if ($scope.entity.id != null) {
+			if ($scope.entity.specification.id != null) {
 				object=specificationService.update($scope.entity);
 			} else{
 				object=specificationService.add($scope.entity);
@@ -71,8 +71,14 @@
 			);	
 		}
 		
+		//规格管理新增数据行
 		$scope.entity={specificationOptList:[]};
 		$scope.addTableRow=function(){
 			$scope.entity.specificationOptList.push({});
+		}
+		
+		////规格管理删除行
+		$scope.delTabRow=function(index){
+			$scope.entity.specificationOptList.splice(index,1)
 		}
 	});

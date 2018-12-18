@@ -11,6 +11,7 @@ import com.eshop.common.PageResult;
 import com.eshop.common.Result;
 import com.eshop.goods.service.SpecificationService;
 import com.eshop.pojo.TbSpecification;
+import com.eshop.specification.pojo.Specification;
 
 @RestController
 @RequestMapping("/specification")
@@ -30,9 +31,9 @@ public class SpecificationController {
 	}
 
 	@RequestMapping("/add")
-	public Result add(@RequestBody TbSpecification brand) {
+	public Result add(@RequestBody Specification specification) {
 		try {
-			specificationService.add(brand);
+			specificationService.add(specification);
 			return new Result(true, "新增成功");
 		} catch (Exception e) {
 			e.printStackTrace();
