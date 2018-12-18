@@ -8,9 +8,12 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.eshop.common.PageResult;
 import com.eshop.goods.service.SpecificationService;
 import com.eshop.mapper.TbSpecificationMapper;
+import com.eshop.mapper.TbSpecificationOptionMapper;
 import com.eshop.pojo.TbSpecification;
 import com.eshop.pojo.TbSpecificationExample;
 import com.eshop.pojo.TbSpecificationExample.Criteria;
+import com.eshop.pojo.TbSpecificationOption;
+import com.eshop.specification.pojo.Specification;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 @Service
@@ -18,6 +21,9 @@ public class SpecificationServiceImpl implements SpecificationService {
     
 	@Autowired
 	private TbSpecificationMapper specificationMapper;
+	
+	@Autowired
+	private TbSpecificationOptionMapper specificationOptionMapper;
 
 	@Override
 	public List<TbSpecification> findAll() {
@@ -31,13 +37,6 @@ public class SpecificationServiceImpl implements SpecificationService {
 		Page<TbSpecification> page =(Page<TbSpecification>) specificationMapper.selectByExample(null);
 		
 		return  new PageResult(page.getTotal(), page.getResult());
-	}
-
-	@Override
-	public void add(TbSpecification specification) {
-		
-		specificationMapper.insert(specification);
-
 	}
 
 	@Override
@@ -77,6 +76,22 @@ public class SpecificationServiceImpl implements SpecificationService {
 		
 		return  new PageResult(page.getTotal(), page.getResult());
 	
+	}
+
+	@Override
+	public void add(Specification specification) {
+		
+		TbSpecification tbSpecification = specification.getSpecification();
+		//插入规格主表
+		specificationMapper.insert(tbSpecification);
+		
+		//循环插入规格选项
+		List<TbSpecificationOption> specificationOptionList = specification.getSpecificationOptList();
+		for(TbSpecificationOption tbSpecificationOption:specificationOptionList){
+			tbSpecificationOption.setSpecId(tbSpecification.getId());
+			specificationOptionMapper.insert(tbSpecificationOption);
+		}
+		
 	}
 
 }
